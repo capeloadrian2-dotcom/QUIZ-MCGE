@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metodología del Curso – Geografía del Ecuador – Licencia Tipo E</title>
+
+  <!-- ============================================================
+       RECURSO EDUCATIVO MOODLE
+       Asignatura : Geografía del Ecuador
+       Sección    : Metodología del Curso
+       Proceso    : Licencia Tipo E – Conducción Profesional
+       Institución: Sindicato Provincial de Choferes Profesionales de Manabí
+       Versión    : 1.0
+       Compatibilidad: HTML5 puro + CSS interno (sin frameworks externos)
+       ============================================================ -->
+
+  <style>
+    /* ---- RESET Y BASE ---- */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+      background: #f7f2f2;
+      color: #2b1a1a;
+      line-height: 1.68;
+    }
+
+    /* ---- CONTENEDOR ---- */
+    .contenedor {
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 12px 48px;
+    }
+
+    /* ====================================================
+       BANNER PRINCIPAL
+       ==================================================== */
+    .banner {
+      background: linear-gradient(135deg, #8b0000 0%, #c0392b 50%, #922b21 100%);
+      border-radius: 0 0 20px 20px;
+      padding: 38px 28px 32px;
+      text-align: center;
+      margin-bottom: 32px;
+      box-shadow: 0 6px 28px rgba(139,0,0,0.38);
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+    }
+    .banner::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 150px; height: 150px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .banner-icono   { font-size: 54px; display: block; margin-bottom: 10px; }
+    .banner h1      {
+      font-size: 1.95em; color: #fff; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4); margin-bottom: 6px;
+    }
+    .banner-subtitulo  { color: #f9d2ce; font-size: 1.05em; font-weight: 500; }
+    .banner-linea      {
+      width: 60px; height: 3px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px; margin: 14px auto 10px;
+    }
+    .banner-institucion {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.84em; font-style: italic; margin-top: 6px;
+    }
+
+    /* ====================================================
+       ETIQUETA DE SECCIÓN
+       ==================================================== */
+    .seccion-titulo {
+      font-size: 0.78em; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #8b0000; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .seccion-titulo::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, #c0392b55, transparent);
+    }
+
+    /* ====================================================
+       INTRO — CARTA AL ESTUDIANTE
+       ==================================================== */
+    .carta {
+      background: linear-gradient(135deg, #7b0000 0%, #a93226 100%);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 18px rgba(139,0,0,0.28);
+      border-left: 6px solid #ffcdd2;
+      position: relative;
+    }
+    .carta::before {
+      content: '✉';
+      position: absolute; top: 18px; right: 24px;
+      font-size: 32px; color: rgba(255,205,210,0.3);
+    }
+    .carta-etiqueta {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      color: #ffe0e0; font-size: 0.7em; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .carta h2  { color: #fff; font-size: 1.05em; font-weight: 700; margin-bottom: 10px; }
+    .carta p   { color: #fce4e4; font-size: 0.96em; line-height: 1.72; }
+
+    /* ====================================================
+       TARJETA GENÉRICA BLANCA
+       ==================================================== */
+    .tarjeta {
+      background: #fff;
+      border-radius: 13px;
+      border: 1px solid #eacece;
+      box-shadow: 0 2px 10px rgba(139,0,0,0.08);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .tarjeta-cabecera {
+      background: linear-gradient(90deg, #fdf0f0 0%, #fff 100%);
+      border-left: 5px solid #c0392b;
+      padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .tarjeta-cabecera-icono { font-size: 26px; flex-shrink: 0; }
+    .tarjeta-cabecera-info  { flex: 1; }
+    .tarjeta-cabecera h3    { color: #5c0a0a; font-size: 1em; font-weight: 700; margin-bottom: 2px; }
+    .tarjeta-cabecera p     { color: #8b3a3a; font-size: 0.83em; }
+    .tarjeta-cuerpo         { padding: 18px 22px 22px; }
+
+    /* ====================================================
+       GRID DE PILARES / ENFOQUES
+       ==================================================== */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 560px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .pilar {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #eacece;
+      padding: 18px 16px;
+      box-shadow: 0 2px 8px rgba(139,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .pilar:hover { box-shadow: 0 4px 18px rgba(139,0,0,0.14); }
+    .pilar::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(90deg, #8b0000, #e74c3c);
+    }
+    .pilar-icono  { font-size: 30px; margin-bottom: 8px; display: block; }
+    .pilar h4     { color: #5c0a0a; font-size: 0.92em; font-weight: 700; margin-bottom: 6px; }
+    .pilar p      { color: #5a3a3a; font-size: 0.83em; line-height: 1.6; }
+
+    /* ====================================================
+       TABLA DE MODALIDADES / FASES
+       ==================================================== */
+    .tabla-metodologia {
+      width: 100%; border-collapse: collapse; font-size: 0.88em;
+    }
+    .tabla-metodologia thead tr {
+      background: linear-gradient(90deg, #8b0000, #c0392b);
+      color: #fff;
+    }
+    .tabla-metodologia thead th {
+      padding: 11px 14px; text-align: left;
+      font-weight: 700; font-size: 0.82em;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+    .tabla-metodologia tbody tr:nth-child(odd)  { background: #fffafa; }
+    .tabla-metodologia tbody tr:nth-child(even) { background: #fff5f5; }
+    .tabla-metodologia tbody tr:hover           { background: #fde8e8; }
+    .tabla-metodologia tbody td {
+      padding: 10px 14px; color: #3d1111;
+      border-bottom: 1px solid #f0d8d8;
+      vertical-align: top;
+    }
+    .tabla-metodologia tbody td:first-child {
+      font-weight: 700; color: #7b0000;
+    }
+
+    /* ====================================================
+       FASES DEL PROCESO (stepper vertical)
+       ==================================================== */
+    .stepper { position: relative; padding-left: 0; }
+
+    .step {
+      display: flex; gap: 16px; margin-bottom: 20px;
+      position: relative;
+    }
+
+    .step-izq {
+      display: flex; flex-direction: column; align-items: center;
+      flex-shrink: 0;
+    }
+    .step-circulo {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, #8b0000, #c0392b);
+      color: #fff; font-weight: 800; font-size: 0.95em;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 3px 10px rgba(139,0,0,0.35);
+      flex-shrink: 0; z-index: 1;
+    }
+    .step-linea {
+      width: 2px; flex: 1; min-height: 20px;
+      background: linear-gradient(to bottom, #c0392b55, transparent);
+      margin-top: 4px;
+    }
+    .step:last-child .step-linea { display: none; }
+
+    .step-der {
+      flex: 1; padding-top: 6px; padding-bottom: 4px;
+    }
+    .step-der h4  { color: #5c0a0a; font-size: 0.95em; font-weight: 700; margin-bottom: 5px; }
+    .step-der p   { color: #5a3a3a; font-size: 0.87em; line-height: 1.65; }
+    .step-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #fff0f0, #fde8e8);
+      border: 1px solid #e8c8c8;
+      color: #8b0000; font-size: 0.7em; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: 2px 8px; border-radius: 10px;
+      margin-bottom: 6px;
+    }
+
+    /* ====================================================
+       LISTA DE RECURSOS Y HERRAMIENTAS
+       ==================================================== */
+    .lista-recursos {
+      list-style: none; display: flex; flex-direction: column; gap: 10px;
+    }
+    .lista-recursos li {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #fffafa; border: 1px solid #f0d8d8;
+      border-radius: 9px; padding: 11px 15px;
+      font-size: 0.91em; color: #2b1a1a;
+      transition: background 0.2s;
+    }
+    .lista-recursos li:hover { background: #fef0f0; }
+    .rec-icono {
+      font-size: 20px; flex-shrink: 0; margin-top: 1px;
+    }
+    .rec-contenido strong { color: #5c0a0a; display: block; margin-bottom: 2px; font-size: 0.93em; }
+    .rec-contenido span   { color: #7a4a4a; font-size: 0.87em; }
+
+    /* ====================================================
+       BLOQUE DE EVALUACIÓN
+       ==================================================== */
+    .eval-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 4px;
+    }
+    @media (max-width: 560px) { .eval-grid { grid-template-columns: 1fr; } }
+
+    .eval-item {
+      background: #fff;
+      border-radius: 11px;
+      border: 1px solid #eacece;
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(139,0,0,0.07);
+      position: relative;
+      overflow: hidden;
+    }
+    .eval-item::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #8b0000, #e74c3c);
+    }
+    .eval-porcentaje {
+      font-size: 2em; font-weight: 800;
+      color: #8b0000; display: block; line-height: 1.1;
+      margin: 8px 0 4px;
+    }
+    .eval-item h5   { color: #5c0a0a; font-size: 0.85em; font-weight: 700; margin-bottom: 5px; }
+    .eval-item p    { color: #7a4a4a; font-size: 0.78em; line-height: 1.55; }
+
+    /* ====================================================
+       NORMAS / COMPROMISOS
+       ==================================================== */
+    .normas-lista {
+      list-style: none; display: flex; flex-direction: column; gap: 9px;
+    }
+    .normas-lista li {
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: 0.91em; color: #3d1111; line-height: 1.65;
+    }
+    .norma-num {
+      flex-shrink: 0; min-width: 26px; height: 26px;
+      background: linear-gradient(135deg, #8b0000, #c0392b);
+      color: #fff; border-radius: 50%;
+      font-size: 0.72em; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+
+    /* ====================================================
+       DETAILS / SUMMARY — bloques desplegables extra
+       ==================================================== */
+    .det-card {
+      background: #fff; border-radius: 12px;
+      border: 1px solid #eacece; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(139,0,0,0.08);
+      margin-bottom: 14px;
+      transition: box-shadow 0.2s;
+    }
+    .det-card:hover { box-shadow: 0 4px 18px rgba(139,0,0,0.14); }
+    .det-card summary {
+      display: flex; align-items: center; gap: 13px;
+      padding: 15px 20px; cursor: pointer;
+      list-style: none;
+      background: linear-gradient(90deg, #fdf0f0 0%, #fff 100%);
+      border-left: 5px solid #c0392b;
+      user-select: none;
+    }
+    .det-card summary::-webkit-details-marker { display: none; }
+    .det-card summary::marker { display: none; }
+    .det-flecha { font-size: 17px; color: #c0392b; transition: transform 0.3s; flex-shrink: 0; }
+    details[open] .det-flecha { transform: rotate(90deg); }
+    .det-num {
+      background: linear-gradient(135deg, #8b0000, #c0392b);
+      color: #fff; font-size: 0.7em; font-weight: 800;
+      padding: 3px 10px; border-radius: 20px;
+      letter-spacing: 0.5px; flex-shrink: 0;
+    }
+    .det-nombre { flex: 1; font-weight: 700; color: #5c0a0a; font-size: 0.96em; }
+    .det-icono  { font-size: 21px; flex-shrink: 0; }
+    .det-cuerpo {
+      padding: 18px 22px 22px;
+      border-top: 1px solid #f3d7d7;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(-6px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ====================================================
+       ALERTA / DESTACADO
+       ==================================================== */
+    .alerta {
+      background: linear-gradient(90deg, #fff0f0, #fde8e8);
+      border: 1px solid #e8c8c8;
+      border-left: 5px solid #8b0000;
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin-top: 14px;
+    }
+    .alerta-titulo {
+      font-size: 0.74em; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #8b0000; margin-bottom: 6px;
+    }
+    .alerta p { font-size: 0.9em; color: #3d1111; line-height: 1.65; }
+
+    /* ====================================================
+       MEMBRETE FINAL
+       ==================================================== */
+    .membrete {
+      background: linear-gradient(135deg, #6b0000 0%, #8b0000 40%, #c0392b 100%);
+      border-radius: 16px;
+      padding: 34px 28px;
+      margin-top: 36px;
+      text-align: center;
+      box-shadow: 0 6px 26px rgba(139,0,0,0.38);
+      position: relative; overflow: hidden;
+    }
+    .membrete::before {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 180px; height: 180px;
+      background: rgba(255,255,255,0.05); border-radius: 50%;
+    }
+    .membrete-icono  { font-size: 42px; display: block; margin-bottom: 12px; }
+    .membrete h3     {
+      color: #fff; font-size: 1.18em; font-weight: 800;
+      margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .membrete-cita   {
+      color: #fce4e4; font-style: italic;
+      font-size: 0.99em; line-height: 1.78;
+      max-width: 600px; margin: 0 auto 16px;
+    }
+    .membrete-sep    {
+      width: 50px; height: 2px;
+      background: rgba(255,255,255,0.32);
+      border-radius: 2px; margin: 14px auto;
+    }
+    .membrete-inst   { color: rgba(255,255,255,0.82); font-size: 0.82em; font-weight: 600; }
+    .membrete-sub    { color: rgba(255,255,255,0.52); font-size: 0.74em; margin-top: 4px; font-style: italic; }
+
+    /* ====================================================
+       RESPONSIVE EXTRA
+       ==================================================== */
+    @media (max-width: 520px) {
+      .banner h1       { font-size: 1.45em; }
+      .det-card summary { padding: 13px 14px; }
+      .det-cuerpo      { padding: 15px 15px 19px; }
+      .membrete        { padding: 26px 18px; }
+      .tabla-metodologia { font-size: 0.8em; }
+      .tabla-metodologia thead th,
+      .tabla-metodologia tbody td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="contenedor">
+
+  <!-- ========================================================
+       BANNER
+       ======================================================== -->
+  <div class="banner">
+    <span class="banner-icono">📐</span>
+    <h1>Metodología del Curso</h1>
+    <p class="banner-subtitulo">Geografía del Ecuador &nbsp;|&nbsp; Licencia Tipo E</p>
+    <div class="banner-linea"></div>
+    <p class="banner-institucion">
+      Sindicato Provincial de Choferes Profesionales de Manabí<br>
+      Proceso Formativo para Conductores Profesionales
+    </p>
+  </div>
+
+  <!-- ========================================================
+       CARTA AL ESTUDIANTE
+       ======================================================== -->
+  <div class="carta">
+    <span class="carta-etiqueta">📩 Estimado Conductor Profesional</span>
+    <h2>Bienvenido a tu proceso de aprendizaje</h2>
+    <p>
+      Este curso ha sido diseñado especialmente para ti: un adulto profesional que
+      combina el trabajo diario con el aprendizaje. Aquí encontrarás una metodología
+      activa, práctica y flexible que respeta tu experiencia como conductor y la aplica
+      al estudio del territorio ecuatoriano. No memorices: <strong style="color:#ffe0e0;">comprende, conecta y aplica.</strong>
+    </p>
+  </div>
+
+  <!-- ========================================================
+       ENFOQUE PEDAGÓGICO — PILARES
+       ======================================================== -->
+  <p class="seccion-titulo">🏛️ Enfoque Pedagógico</p>
+
+  <div class="grid-2">
+    <div class="pilar">
+      <span class="pilar-icono">🧑‍🏫</span>
+      <h4>Aprendizaje Basado en Experiencia</h4>
+      <p>
+        Tu trayectoria como conductor es el punto de partida.
+        Cada concepto geográfico se vincula con situaciones reales
+        que ya viviste en las carreteras del Ecuador.
+      </p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icono">🗺️</span>
+      <h4>Contextualización Territorial</h4>
+      <p>
+        El contenido siempre se ancla en el territorio ecuatoriano:
+        rutas, provincias, climas y relieves que forman parte
+        de tu trabajo cotidiano.
+      </p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icono">🔁</span>
+      <h4>Aprendizaje Activo y Reflexivo</h4>
+      <p>
+        No se trata de copiar y memorizar. Se aprende analizando,
+        comparando regiones, resolviendo casos y reflexionando
+        sobre la práctica vial.
+      </p>
+    </div>
+    <div class="pilar">
+      <span class="pilar-icono">🚛</span>
+      <h4>Orientación Profesional</h4>
+      <p>
+        Todo el contenido está orientado hacia la conducción
+        profesional de categoría Tipo E: logística, seguridad vial,
+        planificación de rutas y responsabilidad ciudadana.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODALIDAD DEL CURSO
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:12px;">📡 Modalidad del Curso</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cabecera">
+      <span class="tarjeta-cabecera-icono">💻</span>
+      <div class="tarjeta-cabecera-info">
+        <h3>Modalidad Mixta (Blended Learning)</h3>
+        <p>Formación presencial complementada con recursos digitales en Moodle LMS</p>
+      </div>
+    </div>
+    <div class="tarjeta-cuerpo">
+      <table class="tabla-metodologia">
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Descripción</th>
+            <th>Porcentaje</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>📘 Estudio autónomo</td>
+            <td>Lectura del compendio, recursos digitales en Moodle, mapas y videos de apoyo</td>
+            <td>40 %</td>
+          </tr>
+          <tr>
+            <td>🏫 Clases presenciales</td>
+            <td>Exposición del instructor, discusión grupal, análisis de rutas y mapas físicos</td>
+            <td>35 %</td>
+          </tr>
+          <tr>
+            <td>✏️ Actividades prácticas</td>
+            <td>Ejercicios de orientación, identificación de provincias, análisis de casos viales</td>
+            <td>15 %</td>
+          </tr>
+          <tr>
+            <td>📝 Evaluación formativa</td>
+            <td>Quizzes en Moodle, autoevaluaciones y pruebas parciales</td>
+            <td>10 %</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="alerta">
+        <p class="alerta-titulo">ℹ️ Requisito de participación</p>
+        <p>
+          Para aprobar el curso es obligatoria una asistencia mínima del <strong>80 %</strong>
+          a las sesiones presenciales y completar al menos el <strong>75 %</strong> de las
+          actividades en la plataforma Moodle.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       FASES DEL PROCESO (stepper)
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">⚙️ Fases del Proceso de Aprendizaje</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cuerpo">
+      <div class="stepper">
+
+        <div class="step">
+          <div class="step-izq">
+            <div class="step-circulo">1</div>
+            <div class="step-linea"></div>
+          </div>
+          <div class="step-der">
+            <span class="step-badge">Fase Inicial</span>
+            <h4>🔍 Exploración y Diagnóstico</h4>
+            <p>
+              El estudiante realiza una autoevaluación diagnóstica sobre su conocimiento
+              previo del territorio ecuatoriano. El instructor identifica saberes previos
+              y experiencias de ruta para contextualizar los contenidos. Se presenta el
+              compendio, la plataforma Moodle y los objetivos del curso.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-izq">
+            <div class="step-circulo">2</div>
+            <div class="step-linea"></div>
+          </div>
+          <div class="step-der">
+            <span class="step-badge">Fase de Desarrollo</span>
+            <h4>📖 Estudio y Comprensión</h4>
+            <p>
+              Estudio secuencial de las 9 unidades del compendio. Cada unidad se trabaja
+              con lectura guiada, análisis de mapas, tablas comparativas y ejemplos viales
+              concretos. Se combina la sesión presencial con actividades en Moodle:
+              foros, cuestionarios y recursos interactivos.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-izq">
+            <div class="step-circulo">3</div>
+            <div class="step-linea"></div>
+          </div>
+          <div class="step-der">
+            <span class="step-badge">Fase Práctica</span>
+            <h4>🛣️ Aplicación y Simulación de Rutas</h4>
+            <p>
+              El estudiante aplica los conocimientos geográficos a casos prácticos:
+              planificación de rutas interprovinciales, identificación de riesgos viales
+              por región y uso del GPS en combinación con el conocimiento cartográfico.
+              Se trabaja con mapas del Ecuador, fichas de provincias y análisis de ejes viales.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-izq">
+            <div class="step-circulo">4</div>
+            <div class="step-linea"></div>
+          </div>
+          <div class="step-der">
+            <span class="step-badge">Fase de Consolidación</span>
+            <h4>🔄 Síntesis y Retroalimentación</h4>
+            <p>
+              Repaso integrador de los conceptos clave del compendio mediante mapas
+              conceptuales, glosarios y resúmenes grupales. El instructor entrega
+              retroalimentación individualizada sobre las actividades y evaluaciones
+              completadas en Moodle.
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-izq">
+            <div class="step-circulo">5</div>
+            <div class="step-linea"></div>
+          </div>
+          <div class="step-der">
+            <span class="step-badge">Fase Final</span>
+            <h4>📝 Evaluación Sumativa</h4>
+            <p>
+              Prueba final que integra los contenidos de todas las unidades. Incluye
+              preguntas de opción múltiple, identificación de regiones y provincias en
+              mapa, y análisis de un caso de planificación de ruta. La calificación
+              mínima de aprobación es <strong>7/10</strong>.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- fin stepper -->
+    </div>
+  </div>
+
+  <!-- ========================================================
+       ESTRATEGIAS DIDÁCTICAS — DESPLEGABLES
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">🎓 Estrategias Didácticas</p>
+  <p style="font-size:0.84em; color:#7a3a3a; margin-bottom:16px;">
+    Haz clic en cada estrategia para conocer su descripción y forma de aplicación.
+  </p>
+
+  <!-- ED 1 -->
+  <div class="det-card">
+    <details>
+      <summary>
+        <span class="det-flecha">▶</span>
+        <span class="det-num">ED 1</span>
+        <span class="det-icono">💬</span>
+        <span class="det-nombre">Aprendizaje Basado en Casos Viales</span>
+      </summary>
+      <div class="det-cuerpo">
+        <p style="font-size:0.92em; color:#3d1111; margin-bottom:12px;">
+          Se presentan situaciones reales de conducción —inundaciones en la Costa,
+          neblina en páramos, deslaves en la Sierra, vías amazónicas sin pavimento—
+          y el estudiante analiza cómo el conocimiento geográfico le permite
+          anticipar, decidir y actuar con seguridad.
+        </p>
+        <ul class="lista-recursos">
+          <li>
+            <span class="rec-icono">📌</span>
+            <div class="rec-contenido">
+              <strong>¿Cómo se aplica?</strong>
+              <span>El instructor presenta un caso, el grupo debate alternativas de ruta
+              y el estudiante justifica su decisión con argumentos geográficos.</span>
+            </div>
+          </li>
+          <li>
+            <span class="rec-icono">🎯</span>
+            <div class="rec-contenido">
+              <strong>Competencia que desarrolla</strong>
+              <span>Toma de decisiones seguras, planificación de rutas, gestión del riesgo vial.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- ED 2 -->
+  <div class="det-card">
+    <details>
+      <summary>
+        <span class="det-flecha">▶</span>
+        <span class="det-num">ED 2</span>
+        <span class="det-icono">🗺️</span>
+        <span class="det-nombre">Lectura e Interpretación de Mapas</span>
+      </summary>
+      <div class="det-cuerpo">
+        <p style="font-size:0.92em; color:#3d1111; margin-bottom:12px;">
+          El uso del mapa del Ecuador es una herramienta central del curso.
+          Se trabaja con mapas físicos, políticos y viales para identificar regiones,
+          provincias, ejes viales, volcanes, ríos y accidentes geográficos relevantes
+          para el conductor profesional.
+        </p>
+        <ul class="lista-recursos">
+          <li>
+            <span class="rec-icono">📌</span>
+            <div class="rec-contenido">
+              <strong>¿Cómo se aplica?</strong>
+              <span>El estudiante localiza provincias, capitales y vías en el mapa,
+              completa fichas geográficas y traza rutas sobre mapas simplificados.</span>
+            </div>
+          </li>
+          <li>
+            <span class="rec-icono">🎯</span>
+            <div class="rec-contenido">
+              <strong>Competencia que desarrolla</strong>
+              <span>Orientación geográfica, lectura cartográfica, planificación logística.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- ED 3 -->
+  <div class="det-card">
+    <details>
+      <summary>
+        <span class="det-flecha">▶</span>
+        <span class="det-num">ED 3</span>
+        <span class="det-icono">👥</span>
+        <span class="det-nombre">Aprendizaje Colaborativo y Debate Grupal</span>
+      </summary>
+      <div class="det-cuerpo">
+        <p style="font-size:0.92em; color:#3d1111; margin-bottom:12px;">
+          El intercambio de experiencias entre conductores enriquece el aprendizaje.
+          Se organizan debates, mesas de trabajo y actividades grupales donde los
+          participantes comparten conocimiento sobre rutas, regiones y situaciones
+          viales que han vivido en su práctica profesional.
+        </p>
+        <ul class="lista-recursos">
+          <li>
+            <span class="rec-icono">📌</span>
+            <div class="rec-contenido">
+              <strong>¿Cómo se aplica?</strong>
+              <span>Foros de discusión en Moodle, grupos de trabajo presencial, presentaciones
+              breves por equipo sobre una región o provincia asignada.</span>
+            </div>
+          </li>
+          <li>
+            <span class="rec-icono">🎯</span>
+            <div class="rec-contenido">
+              <strong>Competencia que desarrolla</strong>
+              <span>Comunicación, trabajo en equipo, valoración del conocimiento colectivo.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- ED 4 -->
+  <div class="det-card">
+    <details>
+      <summary>
+        <span class="det-flecha">▶</span>
+        <span class="det-num">ED 4</span>
+        <span class="det-icono">🖥️</span>
+        <span class="det-nombre">Aprendizaje Digital con Moodle LMS</span>
+      </summary>
+      <div class="det-cuerpo">
+        <p style="font-size:0.92em; color:#3d1111; margin-bottom:12px;">
+          La plataforma Moodle es el entorno virtual de aprendizaje del curso.
+          Aquí se accede al compendio, a los recursos multimedia, a las actividades
+          interactivas y a las evaluaciones en línea. Se ha diseñado para ser
+          accesible desde celulares y computadores, adaptado al nivel digital
+          de los participantes.
+        </p>
+        <ul class="lista-recursos">
+          <li>
+            <span class="rec-icono">📌</span>
+            <div class="rec-contenido">
+              <strong>¿Cómo se aplica?</strong>
+              <span>Acceso semanal a recursos HTML interactivos, cuestionarios de autoevaluación,
+              foros temáticos y calificaciones automáticas por unidad.</span>
+            </div>
+          </li>
+          <li>
+            <span class="rec-icono">🎯</span>
+            <div class="rec-contenido">
+              <strong>Competencia que desarrolla</strong>
+              <span>Autonomía de estudio, alfabetización digital, autodisciplina y gestión del tiempo.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- ED 5 -->
+  <div class="det-card">
+    <details>
+      <summary>
+        <span class="det-flecha">▶</span>
+        <span class="det-num">ED 5</span>
+        <span class="det-icono">📊</span>
+        <span class="det-nombre">Sistematización de Información con Tablas y Resúmenes</span>
+      </summary>
+      <div class="det-cuerpo">
+        <p style="font-size:0.92em; color:#3d1111; margin-bottom:12px;">
+          El compendio está estructurado con tablas comparativas, glosarios y mapas
+          conceptuales que facilitan el procesamiento de información. El estudiante
+          aprende a extraer datos clave y organizarlos de forma que pueda recuperarlos
+          rápidamente durante la evaluación.
+        </p>
+        <ul class="lista-recursos">
+          <li>
+            <span class="rec-icono">📌</span>
+            <div class="rec-contenido">
+              <strong>¿Cómo se aplica?</strong>
+              <span>Elaboración de fichas de provincias, tablas de volcanes y altitudes,
+              resúmenes de ejes viales y cuadros de precauciones viales por región.</span>
+            </div>
+          </li>
+          <li>
+            <span class="rec-icono">🎯</span>
+            <div class="rec-contenido">
+              <strong>Competencia que desarrolla</strong>
+              <span>Organización de la información, pensamiento comparativo, síntesis y memoria visual.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <!-- ========================================================
+       RECURSOS Y MATERIALES
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">📦 Recursos y Materiales del Curso</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cuerpo">
+      <ul class="lista-recursos">
+        <li>
+          <span class="rec-icono">📘</span>
+          <div class="rec-contenido">
+            <strong>Compendio Pedagógico Optimizado</strong>
+            <span>Documento base del curso con las 9 unidades de Geografía del Ecuador,
+            tablas, mapas conceptuales y consejos viales por región.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">💻</span>
+          <div class="rec-contenido">
+            <strong>Recursos HTML Interactivos en Moodle</strong>
+            <span>Páginas web educativas con contenido desplegable, objetivos, metodología,
+            actividades y evaluaciones integradas a la plataforma.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">🗺️</span>
+          <div class="rec-contenido">
+            <strong>Mapas del Ecuador (físico, político y vial)</strong>
+            <span>Materiales cartográficos impresos y digitales para identificar regiones,
+            provincias, capitales y ejes viales durante las sesiones presenciales.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">🎥</span>
+          <div class="rec-contenido">
+            <strong>Videos y Presentaciones de Apoyo</strong>
+            <span>Material audiovisual sobre las regiones del Ecuador, volcanes activos,
+            condiciones climáticas y funcionamiento de la red vial nacional.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">📝</span>
+          <div class="rec-contenido">
+            <strong>Cuestionarios de Autoevaluación en Moodle</strong>
+            <span>Pruebas por unidad con retroalimentación inmediata. Permiten que el
+            estudiante identifique sus fortalezas y áreas de mejora antes de la evaluación final.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">📋</span>
+          <div class="rec-contenido">
+            <strong>Fichas de Trabajo por Región</strong>
+            <span>Guías estructuradas para sistematizar la información de cada región natural:
+            provincias, capitales, vías, características y precauciones viales.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       SISTEMA DE EVALUACIÓN
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">📊 Sistema de Evaluación</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cuerpo">
+      <div class="eval-grid">
+        <div class="eval-item">
+          <span style="font-size:26px;">📝</span>
+          <span class="eval-porcentaje">40 %</span>
+          <h5>Evaluación Formativa</h5>
+          <p>Cuestionarios por unidad, foros y actividades prácticas en Moodle con retroalimentación inmediata.</p>
+        </div>
+        <div class="eval-item">
+          <span style="font-size:26px;">🛣️</span>
+          <span class="eval-porcentaje">30 %</span>
+          <h5>Actividades Prácticas</h5>
+          <p>Ejercicios de identificación de rutas, mapas, casos viales y fichas de provincias completadas en clase.</p>
+        </div>
+        <div class="eval-item">
+          <span style="font-size:26px;">🏆</span>
+          <span class="eval-porcentaje">30 %</span>
+          <h5>Evaluación Final</h5>
+          <p>Prueba integradora escrita que abarca las 9 unidades del compendio. Nota mínima de aprobación: 7/10.</p>
+        </div>
+      </div>
+
+      <div class="alerta" style="margin-top:18px;">
+        <p class="alerta-titulo">🔖 Escala de Calificación</p>
+        <p>
+          La escala de calificación aplicada es la del sistema educativo ecuatoriano:
+          <strong>10 = Excelente · 9 = Muy bueno · 8 = Bueno · 7 = Aprobado · &lt; 7 = Reprobado.</strong>
+          El estudiante que no alcance el 7 deberá rendir una evaluación de recuperación.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       COMPROMISOS DEL ESTUDIANTE
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">🤝 Compromisos del Estudiante</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cuerpo">
+      <ul class="normas-lista">
+        <li>
+          <span class="norma-num">1</span>
+          Asistir puntualmente a las sesiones presenciales con actitud positiva,
+          respeto hacia el instructor y los compañeros.
+        </li>
+        <li>
+          <span class="norma-num">2</span>
+          Ingresar a la plataforma Moodle al menos dos veces por semana para
+          revisar materiales, completar actividades y participar en los foros.
+        </li>
+        <li>
+          <span class="norma-num">3</span>
+          Leer el compendio de manera progresiva, unidad por unidad, antes de
+          cada sesión presencial para aprovechar al máximo el tiempo de clase.
+        </li>
+        <li>
+          <span class="norma-num">4</span>
+          Participar activamente en las actividades grupales, compartiendo sus
+          experiencias de ruta como conductor profesional.
+        </li>
+        <li>
+          <span class="norma-num">5</span>
+          Entregar todas las actividades prácticas en los plazos establecidos.
+          Las entregas tardías se penalizan con reducción de la nota obtenida.
+        </li>
+        <li>
+          <span class="norma-num">6</span>
+          Mantener honestidad académica: los cuestionarios deben ser respondidos
+          de forma individual, sin copia, para garantizar un aprendizaje genuino.
+        </li>
+        <li>
+          <span class="norma-num">7</span>
+          Aplicar en su conducción profesional cotidiana los conocimientos
+          adquiridos sobre geografía, precauciones viales y planificación de rutas.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       ROL DEL INSTRUCTOR
+       ======================================================== -->
+  <p class="seccion-titulo" style="margin-top:8px;">👨‍🏫 Rol del Instructor</p>
+
+  <div class="tarjeta">
+    <div class="tarjeta-cabecera">
+      <span class="tarjeta-cabecera-icono">🧭</span>
+      <div class="tarjeta-cabecera-info">
+        <h3>Instructor como Facilitador y Guía</h3>
+        <p>El instructor no es un expositor pasivo; es un mediador activo del aprendizaje</p>
+      </div>
+    </div>
+    <div class="tarjeta-cuerpo">
+      <ul class="lista-recursos">
+        <li>
+          <span class="rec-icono">🎯</span>
+          <div class="rec-contenido">
+            <strong>Contextualizar el conocimiento</strong>
+            <span>Conectar cada tema geográfico con la experiencia práctica del conductor
+            y con situaciones reales de las rutas del Ecuador.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">💡</span>
+          <div class="rec-contenido">
+            <strong>Promover el pensamiento crítico</strong>
+            <span>Formular preguntas desafiantes, proponer casos de análisis y estimular
+            al estudiante a justificar sus decisiones viales con argumentos geográficos.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">📊</span>
+          <div class="rec-contenido">
+            <strong>Hacer seguimiento del progreso</strong>
+            <span>Revisar regularmente el avance de cada estudiante en Moodle y brindar
+            retroalimentación oportuna, individualizada y constructiva.</span>
+          </div>
+        </li>
+        <li>
+          <span class="rec-icono">🤝</span>
+          <div class="rec-contenido">
+            <strong>Crear un ambiente de respeto</strong>
+            <span>Valorar la diversidad de trayectorias y niveles educativos del grupo,
+            asegurando que todos los participantes puedan aprender sin sentirse excluidos.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MEMBRETE FINAL
+       ======================================================== -->
+  <div class="membrete">
+    <span class="membrete-icono">🚛</span>
+    <h3>Aprender es la Mejor Ruta que Puedes Tomar</h3>
+    <p class="membrete-cita">
+      "El conocimiento geográfico no llena páginas en un libro:
+      llena de seguridad cada kilómetro que recorres.
+      Un conductor que estudia, que comprende su territorio y que planifica
+      su ruta, no solo llega a tiempo, llega con vida y protege la vida de los demás."
+    </p>
+    <div class="membrete-sep"></div>
+    <p class="membrete-inst">
+      Sindicato Provincial de Choferes Profesionales de Manabí
+    </p>
+    <p class="membrete-sub">
+      Proceso Formativo · Licencia Tipo E · Geografía del Ecuador<br>
+      Material pedagógico de uso exclusivo para formación profesional
+    </p>
+  </div>
+
+</div><!-- fin .contenedor -->
+</body>
+</html>
